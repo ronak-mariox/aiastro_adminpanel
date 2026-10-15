@@ -5,7 +5,7 @@
 // - Auth: the access token from the admin login/refresh is sent as a Bearer header; the
 //   httpOnly `refreshToken` cookie (path /api/v1/auth) gets a new one via POST /auth/refresh.
 
-export const API_BASE: string = import.meta.env.VITE_API_BASE ?? 'http://localhost:5000/api/v1'
+export const API_BASE: string = (import.meta.env.VITE_API_BASE ?? 'http://localhost:5000/api/v1').replace(/\/+$/, '')
 
 export type FieldError = { field: string; message: string }
 
